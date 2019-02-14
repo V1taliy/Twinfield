@@ -1,13 +1,18 @@
-describe ("Twinfield link", function() {
-    it ("hi", function() {
-      browser.waitForAngularEnabled(false);
+describe ("Enter word Twinfield to Google search", function() {
+    it ("it should find first link", function() {
+browser.waitForAngularEnabled(false);
 browser.get("https://www.google.com/");
 element(by.name("q")).sendKeys("Twinfield");
 element(by.name("btnK")).click();
-expect(element(by.name))
-
-
+expect(element(by.xpath('/html/body/div[7]/div[3]/div[10]/div[1]/div[2]/div/div[2]/div[2]/div/div/div/div[1]/div/div[1]/div/div/div[1]/a/div/cite')).getText()).toEqual("Twinfield");
 browser.pause();
+
+});
+    it('should follow each available link', function() {
+
+ let allLink = element.all(by.css(".LC20lb"));
+ expect(allLink.get(0).getText()).toEqual('Twinfield');
+ browser.pause();
 
 });
 })
@@ -46,4 +51,5 @@ describe('Enter User Credentials', function() {
 });
 var addButton = element(by.css('[value="add"]'));
 addButton.click().
+
 */
